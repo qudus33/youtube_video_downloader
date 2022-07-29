@@ -6,11 +6,11 @@ root.title("Youtube video downloader")
 root.geometry("300x200")
 
 mylabel = tk.Label(root, text="Paste video url:")
-mylabel.grid()
+mylabel.pack()
 
 link = tk.Entry(root, width=30)
 link.insert(0, "")
-link.grid()
+link.pack()
 
 def download():
     url = link.get()
@@ -18,6 +18,6 @@ def download():
     pytube.YouTube(url).streams.get_lowest_resolution().download()
 
 button = tk.Button(root, text="Download", command=download)
-button.grid()
+button.pack()
 
 root.mainloop()
